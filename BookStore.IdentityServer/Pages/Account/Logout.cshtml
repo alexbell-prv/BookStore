@@ -1,0 +1,26 @@
+@page
+@model BookStore.IdentityServer.Pages.Account.LogoutModel
+@{
+    ViewData["Title"] = "Sign out";
+}
+@if (Model.SignedOut)
+{
+    <h1>You have signed out</h1>
+    @if (Model.PostLogoutRedirectUri is not null)
+    {
+        <a href="@Model.PostLogoutRedirectUri">Return to the application</a>
+    }
+    @if (Model.SignOutIframeUrl is not null)
+    {
+        <iframe class="signout-frame" src="@Model.SignOutIframeUrl" title="Complete sign-out"></iframe>
+    }
+}
+else
+{
+    <h1>Sign out?</h1>
+    <form method="post">
+        <input type="hidden" asp-for="LogoutId" />
+        <button type="submit">Sign out</button>
+    </form>
+}
+

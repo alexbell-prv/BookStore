@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><IsTestProject>true</IsTestProject><IsPackable>false</IsPackable></PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <ProjectReference Include="../BookStore.API/BookStore.API.csproj" />
+    <ProjectReference Include="../BookStore.BusinessLogic/BookStore.BusinessLogic.csproj" />
+    <ProjectReference Include="../BookStore.Infrastructure/BookStore.Infrastructure.csproj" />
+    <ProjectReference Include="../BookStore.Host/BookStore.Host.csproj" />
+    <ProjectReference Include="../BookStore.IdentityServer/BookStore.IdentityServer.csproj" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="NUnit" Version="4.3.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="5.0.0" />
+    <PackageReference Include="Moq" Version="4.20.72" />
+  </ItemGroup>
+</Project>
