@@ -1,0 +1,13 @@
+**/bin
+**/obj
+.git
+.env
+.env.*
+.local
+**/.local
+**/*.jwk
+**/*.pfx
+**/*.p12
+**/*.key
+**/tempkey.jwk
+TestResults

@@ -1,0 +1,33 @@
+@api = http://localhost:5093
+@identity = http://localhost:5094
+# Supply tokens locally. Do not commit credentials or tokens.
+@managementToken = replace-with-client-credentials-access-token
+@searchToken = replace-with-implicit-access-token
+
+### Create an author
+POST {{api}}/api/authors
+Authorization: Bearer {{managementToken}}
+Content-Type: application/json
+
+{ "name": "Ursula Le Guin" }
+
+### Create a book (use the returned author ID)
+POST {{api}}/api/books
+Authorization: Bearer {{managementToken}}
+Content-Type: application/json
+
+{ "authorId": 1, "title": "The Dispossessed", "subTitle": null }
+
+### Read a book
+GET {{api}}/api/books/1
+Authorization: Bearer {{managementToken}}
+
+### Search with a user token
+GET {{api}}/api/books/search?title=dispossessed&authorName=le%20guin&page=1&pageSize=20
+Authorization: Bearer {{searchToken}}
+
+### Discovery
+GET {{identity}}/.well-known/openid-configuration
+
+### Readiness
+GET {{api}}/health/ready

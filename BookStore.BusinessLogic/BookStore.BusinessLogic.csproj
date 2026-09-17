@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="../BookStore.Repository/BookStore.Repository.csproj" />
+  </ItemGroup>
+</Project>
+

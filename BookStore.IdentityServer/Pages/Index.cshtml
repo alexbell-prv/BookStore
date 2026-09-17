@@ -1,0 +1,15 @@
+@page
+@{
+    ViewData["Title"] = "Account";
+}
+<h1>Your bookstore account</h1>
+@if (User.Identity?.IsAuthenticated == true)
+{
+    <p>Signed in as @User.Identity.Name.</p>
+    <a asp-page="/Account/Logout">Sign out</a>
+}
+else
+{
+    <p>Sign in to use book search.</p>
+    <a asp-page="/Account/Login">Sign in</a>
+}

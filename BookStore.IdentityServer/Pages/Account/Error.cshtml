@@ -1,0 +1,9 @@
+@page
+@model BookStore.IdentityServer.Pages.Account.ErrorModel
+@{
+    ViewData["Title"] = "Sign-in error";
+}
+<h1>We couldn’t complete sign-in</h1>
+<p>@Model.Message</p>
+<a asp-page="/Index">Return to your account</a>
+
